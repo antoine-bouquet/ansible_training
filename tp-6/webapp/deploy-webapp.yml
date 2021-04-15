@@ -1,0 +1,13 @@
+---
+- name: "Deployment of nginx and webapp-v2"
+  hosts: prod
+  tasks:
+  - debug:
+      msg: "beginning of the deployment"  
+
+- name: "install nginx"
+  import_playbook: nginx.yml
+
+- name: "deploy webapp-v2"
+  import_playbook: webapp-v2.yml
+...
